@@ -11,11 +11,6 @@
 module.exports = function(grunt) {
 'use strict';
 
-  // Delete after first run
-  if(!grunt.file.exists('vendor/bootstrap')) {
-    grunt.fail.fatal('>> Please run "bower install" before continuing.');
-  }
-
   // Project configuration.
   grunt.initConfig({
 
@@ -29,8 +24,6 @@ module.exports = function(grunt) {
     // Before generating any new files, remove files from previous build.
     clean: {
       example: ['<%= site.dest %>/*.html'],
-      // Delete this target after first run!!!
-      once: ['<%= site.theme %>/bootstrap/{var*,mix*,util*}.less']
     },
 
 
@@ -91,17 +84,6 @@ module.exports = function(grunt) {
 
     // Copy Bootstrap's assets to site assets
     copy: {
-      // Delete this target after first run!!! Afterwards you'll need to
-      // decide on a strategy for adding javascripts, fonts etc.
-      once: {
-        files: [
-          {expand: true, cwd: '<%= bootstrap %>/less', src: ['*', '!{var*,mix*,util*}'], dest: '<%= site.theme %>/bootstrap/'},
-          {expand: true, cwd: '<%= bootstrap %>/less', src: ['{util*,mix*}.less'], dest: '<%= site.theme %>/utils'},
-          {expand: true, cwd: '<%= bootstrap %>/less', src: ['variables.less'], dest: '<%= site.theme %>/'},
-          {expand: true, cwd: 'node_modules/showup', src: ['showup.js'], dest: '<%= site.assets %>/js/'},
-          {expand: true, cwd: 'node_modules/showup', src: ['showup.css'], dest: '<%= site.theme %>/components/', ext: '.less'},
-        ]
-      },
       // Keep this target as a getting started point
       assets: {
         files: [
@@ -133,20 +115,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('assemble-less');
   grunt.loadNpmTasks('assemble');
 
-  // Run this task once, then delete it as well as all of the "once" targets.
-  grunt.registerTask('setup', ['copy:once', 'clean:once']);
-
   // Build HTML, compile LESS and watch for changes. You must first run "bower install"
   // or install Bootstrap to the "vendor" directory before running this command.
   grunt.registerTask('design', ['clean', 'assemble', 'less:site', 'watch:site']);
 
   grunt.registerTask('docs', ['readme', 'sync']);
 
-  // Delete this conditional logic after first run.
-  if(!grunt.file.exists('_gh_pages_/assets/fonts') && !grunt.file.exists('_gh_pages_/assets/js')) {
-    grunt.registerTask('default', ['setup', 'clean', 'jshint', 'copy:assets', 'assemble', 'less', 'docs']);
-  } else {
-    // Use this going forward.
-    grunt.registerTask('default', ['clean', 'jshint', 'copy:assets', 'assemble', 'less', 'docs']);
-  }
+  grunt.registerTask('default', ['clean', 'jshint', 'copy:assets', 'assemble', 'less', 'docs']);
 };
