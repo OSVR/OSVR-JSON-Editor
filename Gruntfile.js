@@ -118,7 +118,5 @@ module.exports = function(grunt) {
   // or install Bootstrap to the "vendor" directory before running this command.
   grunt.registerTask('design', ['clean', 'assemble', 'less:site', 'watch:site']);
 
-  grunt.registerTask('docs', ['readme', 'sync']);
-
-  grunt.registerTask('default', ['clean', 'jshint', 'copy:assets', 'assemble', 'less', 'docs']);
+  grunt.registerTask('default', ['clean', 'jshint', 'copy:assets', 'assemble', 'less', 'sync']);
 };
