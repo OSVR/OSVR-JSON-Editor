@@ -50,6 +50,7 @@ module.exports = function(grunt) {
           '<%= config.dist %>/{,*/}*.html',
           '<%= config.dist %>/assets/{,*/}*.css',
           '<%= config.dist %>/assets/{,*/}*.js',
+          '<%= config.dist %>/assets/{,*/}*.json',
           '<%= config.dist %>/assets/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -93,6 +94,12 @@ module.exports = function(grunt) {
         cwd: 'bower_components/bootstrap/dist/',
         src: '**',
         dest: '<%= config.dist %>/assets/'
+      },
+      jsoneditor: {
+        expand: true,
+        cwd: 'bower_components/jsoneditor/dist/',
+        src: '**',
+        dest: '<%= config.dist %>/assets/js/'
       },
       theme: {
         expand: true,
