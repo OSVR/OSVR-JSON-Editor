@@ -68,7 +68,7 @@ module.exports = function(grunt) {
         plugins: '<%= site.plugins %>'
       },
       example: {
-        files: {'<%= site.dest %>/': ['<%= site.templates %>/*.hbs']}
+        files: {'<%= site.dest %>/': ['<%= site.content %>/*.hbs']}
       }
     },
 
