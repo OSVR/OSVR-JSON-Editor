@@ -9,6 +9,7 @@ assets:           <%= site.dest %>/assets
 # Data
 data:             data/*.{json,yml}
 content:          content
+schemas:          schemas
 
 # Templates
 templates:        templates

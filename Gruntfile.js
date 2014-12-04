@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 
     // Lint JavaScript
     jshint: {
-      all: ['Gruntfile.js', 'templates/helpers/*.js'],
+      all: ['Gruntfile.js', 'templates/helpers/*.js', '<%= site.schemas %>/*.json'],
       options: {
         jshintrc: '.jshintrc'
       }
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
         helpers: '<%= site.helpers %>',
         plugins: '<%= site.plugins %>'
       },
-      example: {
+      editor: {
         files: {'<%= site.dest %>/': ['<%= site.content %>/*.hbs']}
       }
     },
@@ -96,8 +96,10 @@ module.exports = function(grunt) {
       // Keep this target as a getting started point
       assets: {
         files: [
-          {expand: true, cwd: '<%= bootstrap %>/dist/fonts', src: ['*.*'], dest: '<%= site.assets %>/fonts/'},
-          {expand: true, cwd: '<%= bootstrap %>/dist/js',    src: ['*.*'], dest: '<%= site.assets %>/js/'},
+          {expand: true, cwd: '<%= bootstrap %>/dist/fonts',    src: ['*.*'], dest: '<%= site.assets %>/fonts/'},
+          {expand: true, cwd: '<%= bootstrap %>/dist/js',       src: ['*.*'], dest: '<%= site.assets %>/js/'},
+          {expand: true, cwd: '<%= vendor %>/json-editor/dist', src: ['*.*'], dest: '<%= site.assets %>/js/'},
+          {expand: true, cwd: '<%= site.schemas %>',            src: ['*.json'], dest: '<%= site.assets %>/schemas/'},
         ]
       }
     },
@@ -108,7 +110,7 @@ module.exports = function(grunt) {
         tasks: ['jshint', 'nodeunit']
       },
       site: {
-        files: ['Gruntfile.js', '<%= less.options.paths %>/*.less', 'templates/**/*.hbs'],
+        files: ['Gruntfile.js', '<%= less.options.paths %>/*.less', 'templates/**/*.hbs', '<%= site.content %>/*', '<%= site.schemas %>/*'],
         tasks: ['design']
       }
     }
@@ -126,7 +128,7 @@ module.exports = function(grunt) {
 
   // Build HTML, compile LESS and watch for changes. You must first run "bower install"
   // or install Bootstrap to the "vendor" directory before running this command.
-  grunt.registerTask('design', ['clean', 'assemble', 'less:site', 'watch:site']);
+  grunt.registerTask('design', ['clean', 'assemble', 'copy:assets', 'less:site', 'watch:site']);
 
   grunt.registerTask('default', ['clean', 'bower', 'jshint', 'copy:assets', 'assemble', 'less', 'sync']);
 };

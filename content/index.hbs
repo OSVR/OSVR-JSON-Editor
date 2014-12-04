@@ -2,5 +2,25 @@
 title: Editor
 ---
 
+<div id="editor_holder"></div>
 
+{{! Load jQuery first }}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{{assets}}/js/jsoneditor.js"></script>
+<script>
+// Set the default CSS theme and icon library globally
+JSONEditor.defaults.theme = 'bootstrap3';
+JSONEditor.defaults.iconlib = 'bootstrap3';
+</script>
 
+<script>
+$(document).ready(function() {
+// Create the editor
+var editor = new JSONEditor(document.getElementById('editor_holder'), {
+    ajax: true,
+    schema: {
+        $ref: "{{assets}}/schemas/device_descriptor_schema.json"
+    }
+});
+});
+</script>
