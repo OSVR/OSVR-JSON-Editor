@@ -28,6 +28,15 @@ module.exports = function(grunt) {
       dist: 'dist'
     },
 
+    // Bower install
+    bower: {
+      install: {
+        options: {
+          targetDir: 'bower_components'
+        }
+      }
+    },
+
     watch: {
       assemble: {
         files: ['<%= config.src %>/{content,data,templates}/{,*/}*.{md,hbs,yml}'],
@@ -99,6 +108,7 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('assemble');
 
   grunt.registerTask('server', [
@@ -109,6 +119,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'clean',
+    'bower',
     'copy',
     'assemble'
   ]);
