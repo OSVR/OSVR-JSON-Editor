@@ -5,7 +5,7 @@
 You need `npm`, `grunt`, and `bower` installed globally.
 
 ```bash
-npm i && bower install && grunt
+npm i && grunt
 ```
 
 ## License

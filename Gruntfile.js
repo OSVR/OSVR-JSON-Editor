@@ -1,9 +1,9 @@
 /*
  * descriptor-editor
- * 
+ *
  * Ryan Pavlik
  * https://github.com/sensics/descriptor-editor
- * 
+ *
  * Copyright (c) 2014
  * Licensed under the Apache-2.0 license.
  */
@@ -32,6 +32,15 @@ module.exports = function(grunt) {
       all: ['Gruntfile.js', 'templates/helpers/*.js'],
       options: {
         jshintrc: '.jshintrc'
+      }
+    },
+
+    // Bower install
+    bower: {
+      install: {
+        options: {
+          targetDir: '<%= vendor %>'
+        }
       }
     },
 
@@ -110,6 +119,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-sync-pkg');
   grunt.loadNpmTasks('assemble-less');
   grunt.loadNpmTasks('assemble');
@@ -118,5 +128,5 @@ module.exports = function(grunt) {
   // or install Bootstrap to the "vendor" directory before running this command.
   grunt.registerTask('design', ['clean', 'assemble', 'less:site', 'watch:site']);
 
-  grunt.registerTask('default', ['clean', 'jshint', 'copy:assets', 'assemble', 'less', 'sync']);
+  grunt.registerTask('default', ['clean', 'bower', 'jshint', 'copy:assets', 'assemble', 'less', 'sync']);
 };
