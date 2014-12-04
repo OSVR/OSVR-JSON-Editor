@@ -2,7 +2,7 @@
 # Build config
 # =============================================
 
-root:             _gh_pages
+root:             _output
 dest:             <%= site.root %>
 assets:           <%= site.dest %>/assets
 
@@ -16,8 +16,7 @@ layouts:          <%= site.templates %>/layouts
 layout:           default.hbs
 
 # Extensions
-helpers:          
-  - <%= site.templates %>/helpers/*.js
+helpers:
   - handlebars-helper-br
   - handlebars-helper-slugify
 
