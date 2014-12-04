@@ -19,6 +19,7 @@ layout:           default.hbs
 helpers:          
   - <%= site.templates %>/helpers/*.js
   - handlebars-helper-br
+  - handlebars-helper-slugify
 
 plugins:
   - assemble-contrib-anchors
