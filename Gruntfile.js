@@ -97,15 +97,21 @@ module.exports = function(grunt) {
       },
       jsoneditor: {
         expand: true,
-        cwd: 'bower_components/jsoneditor/dist/',
+        cwd: 'bower_components/json-editor/dist/',
         src: '**',
         dest: '<%= config.dist %>/assets/js/'
       },
       theme: {
         expand: true,
         cwd: 'src/assets/',
-        src: '**',
+        src: '*.css',
         dest: '<%= config.dist %>/assets/css/'
+      },
+      schemas: {
+        expand: true,
+        cwd: 'src/assets/schemas/',
+        src: '*.json',
+        dest: '<%= config.dist %>/assets/schemas/'
       }
     },
 
