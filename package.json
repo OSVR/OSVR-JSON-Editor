@@ -26,8 +26,8 @@
     "grunt-bower-task": "^0.4.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-connect": "^0.8.0",
-    "grunt-contrib-watch": "^0.6.1",
     "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
     "load-grunt-tasks": "^0.6.0",
     "time-grunt": "^1.0.0"
   },
@@ -37,6 +37,5 @@
       "url": "https://github.com/sensics/osvr-device-descriptor-editor/blob/master/LICENSE-Apache-2.0"
     }
   ],
-  "keywords": [
-  ]
+  "keywords": []
 }
