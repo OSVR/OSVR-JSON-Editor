@@ -81,7 +81,8 @@ module.exports = function(grunt) {
           layoutdir: '<%= config.src %>/templates/layouts/',
           layout: 'default.hbs',
           data: '<%= config.src %>/data/*.{json,yml}',
-          partials: '<%= config.src %>/templates/partials/*.hbs'
+          partials: '<%= config.src %>/templates/partials/*.hbs',
+          helpers: ['./helpers/*.js']
         },
         files: {
           '<%= config.dist %>/': ['<%= config.src %>/templates/pages/*.hbs']

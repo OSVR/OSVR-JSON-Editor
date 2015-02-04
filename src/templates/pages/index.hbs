@@ -1,5 +1,12 @@
 ---
 title: Device Descriptor Editor
-schema: device_descriptor_schema.json
 layout: jsoneditor.hbs
 ---
+<script>
+$(document).ready(function() {
+// Create the editor
+editor = new JSONEditor(document.getElementById('editor_holder'), {
+    schema: {{{json device_descriptor_schema}}}
+});
+});
+</script>
