@@ -61,7 +61,7 @@
 
       $('#actionSaveFile').click(function() {
         var filename = my.editor.filename || 'descriptor.json';
-        var contents = JSON.stringify(my.editor.getValue(), null, '    ');
+        var contents = JSON.stringify(my.editor.getValue(), null, '  ');
         console.log("Contents: " + contents);
         var blob = new root.Blob([contents], {type: "application/json;charset=utf-8"});
         root.saveAs(blob, filename);
