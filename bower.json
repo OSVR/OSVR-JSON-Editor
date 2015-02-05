@@ -6,7 +6,8 @@
     "json-editor": "~0.7.15",
     "filedrop": "*",
     "FileSaver": "*",
-    "Blob": "*"
+    "Blob": "*",
+    "OSVR-JSON-Schemas": "https://github.com/OSVR/OSVR-JSON-Schemas.git#master"
   },
   "private": true,
   "exportsOverride": {

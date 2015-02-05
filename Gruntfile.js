@@ -82,7 +82,7 @@ module.exports = function(grunt) {
           assets: '<%= config.dist %>/assets',
           layoutdir: '<%= config.src %>/templates/layouts/',
           layout: 'default.hbs',
-          data: '<%= config.src %>/data/*.{json,yml}',
+          data: ['<%= config.src %>/data/*.{json,yml}', 'bower_components/OSVR-JSON-Schemas/*schema.json'],
           partials: '<%= config.src %>/templates/partials/*.hbs',
           helpers: ['./helpers/*.js']
         },
