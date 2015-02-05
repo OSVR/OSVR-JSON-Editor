@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "dependencies": {
     "bootstrap": "~3.3",
-    "json-editor": "~0.7.15"
+    "json-editor": "~0.7.15",
+    "filedrop": "*"
   },
   "private": true
 }

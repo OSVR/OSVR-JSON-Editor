@@ -2,11 +2,28 @@
 title: Device Descriptor Editor
 layout: jsoneditor.hbs
 ---
+<div class="btn-group">
+  <button class="btn btn-default" type="button" id="update_timestamp">Update Timestamp</button>
+</div>
+
 <script>
-$(document).ready(function() {
+var util_methods = {
+  updateTimestamp: function(ed) {
+      var timestamp = ed.getEditor('root.lastModified');
+      if (timestamp) {
+        timestamp.setValue((new Date()).toJSON());
+      }
+    }
+};
 // Create the editor
-editor = new JSONEditor(document.getElementById('editor_holder'), {
+createEditor({
     schema: {{{json device_descriptor_schema}}}
-});
-});
+  },
+  function(ed) {
+    // Handle timestamp updating
+    $('#update_timestamp').click(function() {
+      util_methods['updateTimestamp'](ed);
+    });
+  }
+);
 </script>

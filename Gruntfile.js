@@ -103,6 +103,12 @@ module.exports = function(grunt) {
         src: '**',
         dest: '<%= config.dist %>/assets/js/'
       },
+      filedrop_js: {
+        expand: true,
+        cwd: 'bower_components/filedrop/',
+        src: 'filedrop-min.js',
+        dest: '<%= config.dist %>/assets/js/'
+      },
       theme: {
         expand: true,
         cwd: 'src/assets/',
