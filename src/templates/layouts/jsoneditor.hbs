@@ -13,17 +13,9 @@ layout: default.hbs
 
 <!-- custom application script -->
 <script src="{{assets}}/jsoneditor-common.js"></script>
-<!--
-<script>
-  createEditor = function(options, fn) {
-    $(document).ready(function() {
-      // Create the editor
-      editor = new JSONEditor(document.getElementById('editor_holder'), options);
-      fn(editor);
-    });
-  }
-</script>-->
-<p class="bg-info">Drop a matching JSON file anywhere on this page to open it.</p>
+
+<p class="well">Drop a matching JSON file anywhere on this page to open it.</p>
+
 <button class="btn btn-default" id="actionSaveFile">Save file</a>
 
 {{> body }}
