@@ -7,7 +7,7 @@
     "filedrop": "*",
     "FileSaver": "*",
     "Blob": "*",
-    "OSVR-JSON-Schemas": "https://github.com/OSVR/OSVR-JSON-Schemas.git#master"
+    "OSVR-JSON-Schemas": "git@github.com:OSVR/OSVR-JSON-Schemas.git#master"
   },
   "private": true,
   "exportsOverride": {
