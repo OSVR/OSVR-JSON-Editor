@@ -28,18 +28,12 @@
 
 <div id="editor_holder"></div>
 
-<!-- Modal File Open dialog -->
-<div class="modal fade" id="file_open" tabindex="-1" role="dialog" aria-labelledby="fileOpenLabel" aria-hidden="true">
+<!-- Modal File Open dialog, used as a drop status indicator -->
+<div class="modal fade" id="file_open" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="fileOpenLabel">Open JSON file</h4>
-      </div>
       <div class="modal-body">
-        Drop file here to open
+        Drop JSON file to open
       </div>
     </div>
   </div>
@@ -65,9 +59,26 @@
 <script>
   $(document).ready(function() {
     fd.jQuery();
-    $('#file_open')
+
+    var showDropTarget = function() {
+      console.log("Enter");
+      $('#file_open').modal('show');
+    }
+
+    var hideDropTarget = function() {
+      console.log("Done with drop target");
+      $('#file_open').modal('hide');
+    }
+
+    $('body')
       .filedrop({
         input: false // Set up an HTML5-only dropzone
+      })
+      .on('fddragenter', function(e) {
+        showDropTarget();
+      })
+      .on('fddragleave', function(e) {
+        hideDropTarget();
       })
       .on('fdsend', function(e, files) {
         $.each(files, function(i, file) {
@@ -75,7 +86,6 @@
               editor.setValue(JSON.parse(str));
               editor.filename = file.name;
               console.log("Loaded " + file.name);
-              $('#file_open').modal('hide');
             },
             function() {
               alert('Problem reading this file.');
@@ -83,7 +93,7 @@
             'text'
           );
         });
+        hideDropTarget();
       });
-
   });
 </script>
