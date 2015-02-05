@@ -4,7 +4,9 @@
   "dependencies": {
     "bootstrap": "~3.3",
     "json-editor": "~0.7.15",
-    "filedrop": "*"
+    "filedrop": "*",
+    "FileSaver": "*",
+    "Blob": "*"
   },
   "private": true,
   "exportsOverride": {
@@ -12,6 +14,12 @@
       "js": "dist/js/*",
       "css": "dist/css/*",
       "fonts": "dist/fonts/*"
+    },
+    "FileSaver": {
+      "js": "*.js"
+    },
+    "Blob": {
+      "js": "*.js"
     }
   }
 }

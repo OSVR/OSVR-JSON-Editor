@@ -41,7 +41,7 @@ module.exports = function(grunt) {
 
     watch: {
       assemble: {
-        files: ['<%= config.src %>/{content,data,templates}/{,*/}*.{md,hbs,yml}'],
+        files: ['<%= config.src %>/{content,data,templates}/{,*/}*.{md,hbs,yml}', '<%= config.src %>/assets/*'],
         tasks: ['assemble']
       },
       livereload: {
@@ -93,6 +93,12 @@ module.exports = function(grunt) {
     },
 
     copy: {
+      localjs: {
+        expand: true,
+        cwd: 'src/assets/',
+        src: '*.js',
+        dest: '<%= config.dist %>/assets/'
+      },
       theme: {
         expand: true,
         cwd: 'src/assets/',

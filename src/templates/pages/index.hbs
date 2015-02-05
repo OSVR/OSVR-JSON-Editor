@@ -2,9 +2,7 @@
 title: Device Descriptor Editor
 layout: jsoneditor.hbs
 ---
-<div class="btn-group">
-  <button class="btn btn-default" type="button" id="update_timestamp">Update Timestamp</button>
-</div>
+<button class="btn btn-default" type="button" id="update_timestamp">Update Timestamp</button>
 
 <script>
 var util_methods = {
@@ -16,7 +14,7 @@ var util_methods = {
     }
 };
 // Create the editor
-createEditor({
+OSVRJSON.createEditor({
     schema: {{{json device_descriptor_schema}}}
   },
   function(ed) {

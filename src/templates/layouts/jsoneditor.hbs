@@ -1,7 +1,14 @@
---- layout: default.hbs ---
+---
+layout: default.hbs
+---
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- jQuery - loading first -->
 <script src="{{assets}}/jquery/jquery.js"></script>
+<script src="{{assets}}/json-editor/jsoneditor.js"></script>
+
+<!-- custom application script -->
+<script src="{{assets}}/jsoneditor-common.js"></script>
+<!--
 <script>
   createEditor = function(options, fn) {
     $(document).ready(function() {
@@ -10,19 +17,9 @@
       fn(editor);
     });
   }
-</script>
-
-<div class="btn-group">
-  <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">File
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="#" data-toggle="modal" data-target="#file_open">Open file...</a>
-    </li>
-    <li><a href="#" id="action_save_file">Save file...</a>
-    </li>
-  </ul>
-</div>
+</script>-->
+<p class="bg-info">Drop a matching JSON file anywhere on this page to open it.</p>
+<button class="btn btn-default" id="actionSaveFile">Save file</a>
 
 {{> body }}
 
@@ -38,62 +35,8 @@
     </div>
   </div>
 </div>
-<script src="{{assets}}/json-editor/jsoneditor.js"></script>
-<script>
-  // Set the default CSS theme and icon library globally
-  JSONEditor.defaults.theme = 'bootstrap3';
-  JSONEditor.defaults.iconlib = 'bootstrap3';
 
-  // Call with the options object (primarily including the schema), as well
-  // as a function that will receive the editor object.
-  createEditor = function(options, fn) {
-    $(document).ready(function() {
-      // Create the editor
-      editor = new JSONEditor(document.getElementById('editor_holder'), options);
-      fn(editor);
-    });
-  }
-</script>
-
-<script src="{{assets}}/filedrop/filedrop.js"></script>
-<script>
-  $(document).ready(function() {
-    fd.jQuery();
-
-    var showDropTarget = function() {
-      console.log("Enter");
-      $('#file_open').modal('show');
-    }
-
-    var hideDropTarget = function() {
-      console.log("Done with drop target");
-      $('#file_open').modal('hide');
-    }
-
-    $('body')
-      .filedrop({
-        input: false // Set up an HTML5-only dropzone
-      })
-      .on('fddragenter', function(e) {
-        showDropTarget();
-      })
-      .on('fddragleave', function(e) {
-        hideDropTarget();
-      })
-      .on('fdsend', function(e, files) {
-        $.each(files, function(i, file) {
-          file.readData(function(str) {
-              editor.setValue(JSON.parse(str));
-              editor.filename = file.name;
-              console.log("Loaded " + file.name);
-            },
-            function() {
-              alert('Problem reading this file.');
-            },
-            'text'
-          );
-        });
-        hideDropTarget();
-      });
-  });
-</script>
+<!-- third-party script libraries -->
+<script async src="{{assets}}/Blob/js/Blob.js"></script>
+<script async src="{{assets}}/FileSaver/js/FileSaver.min.js"></script>
+<script async src="{{assets}}/filedrop/filedrop.js"></script>
