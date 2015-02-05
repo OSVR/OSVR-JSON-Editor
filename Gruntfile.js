@@ -32,7 +32,9 @@ module.exports = function(grunt) {
     bower: {
       install: {
         options: {
-          targetDir: 'bower_components'
+          verbose: true,
+          layout: 'byComponent',
+          targetDir: '<%= config.dist %>/assets'
         }
       }
     },
@@ -91,24 +93,6 @@ module.exports = function(grunt) {
     },
 
     copy: {
-      bootstrap: {
-        expand: true,
-        cwd: 'bower_components/bootstrap/dist/',
-        src: '**',
-        dest: '<%= config.dist %>/assets/'
-      },
-      jsoneditor: {
-        expand: true,
-        cwd: 'bower_components/json-editor/dist/',
-        src: '**',
-        dest: '<%= config.dist %>/assets/js/'
-      },
-      filedrop_js: {
-        expand: true,
-        cwd: 'bower_components/filedrop/',
-        src: 'filedrop-min.js',
-        dest: '<%= config.dist %>/assets/js/'
-      },
       theme: {
         expand: true,
         cwd: 'src/assets/',

@@ -6,5 +6,12 @@
     "json-editor": "~0.7.15",
     "filedrop": "*"
   },
-  "private": true
+  "private": true,
+  "exportsOverride": {
+    "bootstrap": {
+      "js": "dist/js/*",
+      "css": "dist/css/*",
+      "fonts": "dist/fonts/*"
+    }
+  }
 }
