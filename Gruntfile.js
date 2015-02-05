@@ -108,12 +108,6 @@ module.exports = function(grunt) {
         cwd: 'src/assets/',
         src: '*.css',
         dest: '<%= config.dist %>/assets/css/'
-      },
-      schemas: {
-        expand: true,
-        cwd: 'src/assets/schemas/',
-        src: '*.json',
-        dest: '<%= config.dist %>/assets/schemas/'
       }
     },
 
