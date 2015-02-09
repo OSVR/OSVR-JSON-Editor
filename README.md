@@ -15,10 +15,10 @@ Add `sudo` as needed.
 If you're on Windows, use of [Chocolatey](https://chocolatey.org) is recommended, in which case
 
 ```
-choco install nodejs.commandline npm
+choco install nodejs.install
 ```
 
-should take place before the `npm` commands above.
+(latest correct command per @ferventcoder as of 9-feb-2015) should take place before the `npm` commands above.
 
 To build this web site:
 
