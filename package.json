@@ -34,7 +34,7 @@
   "licenses": [
     {
       "type": "Apache-2.0",
-      "url": "https://github.com/OSVR/OSVR-device-descriptor-editor/blob/master/LICENSE-Apache-2.0"
+      "url": "https://github.com/OSVR/OSVR-device-descriptor-editor/blob/master/LICENSE"
     }
   ],
   "keywords": []

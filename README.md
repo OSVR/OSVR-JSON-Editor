@@ -1,6 +1,6 @@
 # osvr-device-descriptor-editor
 
-> Browser-based editor for OSVR device descriptor JSON..
+> Browser-based editor for OSVR device descriptor JSON.
 
 ## Build instructions
 You need `npm`, `grunt-cli`, and `bower` installed globally. I think. Get `npm` with your package system, then this should get the rest:
@@ -44,7 +44,7 @@ This system is based around the "JSON Schema Based Editor" [jdorn/json-editor](h
 
 
 ## License
-Copyright (c) 2014-2015 Sensics, Inc., contributors.
-Intended to be released under the Apache-2.0 license
+
+This project: Licensed under the Apache License, Version 2.0.
 
 ***
