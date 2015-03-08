@@ -1,6 +1,12 @@
-# osvr-device-descriptor-editor
+# OSVR-Device-Descriptor-Editor
 
-> Browser-based editor for OSVR device descriptor JSON.
+Browser-based editor for OSVR device descriptor JSON.
+
+> Maintained at <https://github.com/OSVR/OSVR-Device-Descriptor-Editor>
+>
+> For details, see <http://osvr.github.io>
+>
+> For support, see <http://support.osvr.com>
 
 ## Build instructions
 You need `npm`, `grunt-cli`, and `bower` installed globally. I think. Get `npm` with your package system, then this should get the rest:
