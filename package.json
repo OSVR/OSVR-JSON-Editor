@@ -1,18 +1,18 @@
 {
-  "name": "osvr-device-descriptor-editor",
-  "description": "Browser-based editor for OSVR device descriptor JSON.",
+  "name": "osvr-json-editor",
+  "description": "Browser-based editor for OSVR JSON data.",
   "version": "0.1.0",
-  "homepage": "https://github.com/OSVR/OSVR-device-descriptor-editor",
+  "homepage": "https://github.com/OSVR/OSVR-JSON-editor",
   "author": {
     "name": "Ryan Pavlik",
     "url": "http://github.com/sensics/"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/OSVR/OSVR-device-descriptor-editor.git"
+    "url": "git://github.com/OSVR/OSVR-JSON-editor"
   },
   "bugs": {
-    "url": "https://github.com/OSVR/OSVR-device-descriptor-editor/issues"
+    "url": "https://github.com/OSVR/OSVR-JSON-editor/issues"
   },
   "engines": {
     "node": ">=0.10"
@@ -34,7 +34,7 @@
   "licenses": [
     {
       "type": "Apache-2.0",
-      "url": "https://github.com/OSVR/OSVR-device-descriptor-editor/blob/master/LICENSE"
+      "url": "https://github.com/OSVR/OSVR-JSON-editor/blob/master/LICENSE"
     }
   ],
   "keywords": []

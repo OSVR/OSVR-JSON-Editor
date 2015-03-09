@@ -1,8 +1,8 @@
-# OSVR-Device-Descriptor-Editor
+# OSVR-JSON-Editor
 
-Browser-based editor for OSVR device descriptor JSON.
+Browser-based editor for OSVR device descriptor JSON and soon other OSVR JSON files.
 
-> Maintained at <https://github.com/OSVR/OSVR-Device-Descriptor-Editor>
+> Maintained at <https://github.com/OSVR/OSVR-JSON-Editor>
 >
 > For details, see <http://osvr.github.io>
 >
