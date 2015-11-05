@@ -1,13 +1,13 @@
 {
   "name": "osvr-device-descriptor-editor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "bootstrap": "~3.3",
-    "json-editor": "~0.7.15",
+    "json-editor": "~0.7.23",
     "filedrop": "*",
     "FileSaver": "*",
     "Blob": "*",
-    "OSVR-JSON-Schemas": "git@github.com:OSVR/OSVR-JSON-Schemas.git#master"
+    "OSVR-JSON-Schemas": "https://github.com/OSVR/OSVR-JSON-Schemas.git#master"
   },
   "private": true,
   "exportsOverride": {
