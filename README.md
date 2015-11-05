@@ -2,11 +2,23 @@
 
 Browser-based editor for OSVR device descriptor JSON and soon other OSVR JSON files.
 
+> Use it now at <http://tools.getosvr.org/json-editor/>
+>
 > Maintained at <https://github.com/OSVR/OSVR-JSON-Editor>
 >
 > For details, see <http://osvr.github.io>
 >
 > For support, see <http://support.osvr.com>
+
+## Installed Version
+
+The "canonical" installation of this tool is at:
+
+> <http://tools.getosvr.org/json-editor/>
+
+That version gets rebuilt (within roughly a minute) any time a push to this repository or to the [OSVR JSON Schema](https://github.com/OSVR/OSVR-JSON-Schemas) repository (which this uses) is detected.
+
+This means that in most cases, it's not necessary to install locally except for testing. The "app" itself runs entirely client-side: it's just static web pages with JavaScript.
 
 ## Build instructions
 You need `npm`, `grunt-cli`, and `bower` installed globally. I think. Get `npm` with your package system, then this should get the rest:
